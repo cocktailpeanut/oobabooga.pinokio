@@ -5,7 +5,7 @@
     "darwin": "bash start_macos.sh"
   },
   "gpu": {
-    "nvidia": "A",
+    "nvidia": ["A", "Y"],
     "amd": "B",
     "apple": "C",
     "ipex": "D",
