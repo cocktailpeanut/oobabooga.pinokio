@@ -1,32 +1,18 @@
 {
   "daemon": true,
-  "cmd": {
-    "win32": "start_windows.bat",
-    "linux": "bash start_linux.sh",
-    "darwin": "bash start_macos.sh"
-  },
+  "cmd": { "win32": "start_windows.bat", "linux": "bash start_linux.sh", "darwin": "bash start_macos.sh" },
   "run": [{
     "method": "shell.run",
     "params": {
       "path": "text-generation-webui",
       "message": "{{self.cmd[platform]}}",
-      "on": [{
-        "event": "/http://[0-9.:]+/",
-        "done": true
-      }]
+      "on": [{ "event": "/http://[0-9.:]+/", "done": true }]
     }
   }, {
     "method": "self.set",
-    "params": {
-      "session.json": {
-        "url": "{{input.event[0]}}"
-      }
-    }
+    "params": { "session.json": { "url": "{{input.event[0]}}" } }
   }, {
     "method": "browser.open",
-    "params": {
-      "uri": "{{self.session.url}}",
-      "target": "_blank"
-    }
+    "params": { "uri": "{{self.session.url}}", "target": "_blank" }
   }]
 }
