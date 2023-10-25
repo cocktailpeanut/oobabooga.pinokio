@@ -29,7 +29,7 @@ module.exports = {
       return [{
         icon: "fa-solid fa-plug",
         text: "Install",
-        href: "install.js",
+        href: "install.json",
         params: { run: true, fullscreen: true }
       }]
     }
